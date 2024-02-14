@@ -18,5 +18,3 @@ A batch processing scheduler is a system that automates the execution of batch f
 1. To select batch files for scheduling, simply click on them in the first table.
 2. Selected batch files will be displayed in the second table.
 3. Once you've chosen the batch files for scheduling, you can start scheduling.
-
-## Contributions
