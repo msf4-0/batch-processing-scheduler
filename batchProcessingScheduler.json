@@ -1,0 +1,741 @@
+[
+    {
+        "id": "a42c5285d40faee6",
+        "type": "tab",
+        "label": "Batch Scheduler",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "97fdab13a25c40e6",
+        "type": "ui_button",
+        "z": "a42c5285d40faee6",
+        "name": "",
+        "group": "777bcb6a6f4b9aab",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Start",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 470,
+        "y": 180,
+        "wires": [
+            [
+                "127f244c97a738dd",
+                "2329ed6ee3114d3c"
+            ]
+        ]
+    },
+    {
+        "id": "68f5cb41500360bd",
+        "type": "comment",
+        "z": "a42c5285d40faee6",
+        "name": "Scheduler",
+        "info": "",
+        "x": 460,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c22206b928d39f1d",
+        "type": "ui_button",
+        "z": "a42c5285d40faee6",
+        "name": "",
+        "group": "777bcb6a6f4b9aab",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "End",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 470,
+        "y": 220,
+        "wires": [
+            [
+                "127f244c97a738dd",
+                "d3e2d6b8909680e4",
+                "144173d074efc07f"
+            ]
+        ]
+    },
+    {
+        "id": "ce8c202f8153f1bc",
+        "type": "switch",
+        "z": "a42c5285d40faee6",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 790,
+        "y": 120,
+        "wires": [
+            [
+                "3cec2fcde23ba65e"
+            ]
+        ]
+    },
+    {
+        "id": "127f244c97a738dd",
+        "type": "ui_switch",
+        "z": "a42c5285d40faee6",
+        "name": "",
+        "label": "Play/Pause",
+        "tooltip": "",
+        "group": "777bcb6a6f4b9aab",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "play_arrow",
+        "oncolor": "green",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "pause",
+        "offcolor": "red",
+        "animate": true,
+        "className": "",
+        "x": 630,
+        "y": 120,
+        "wires": [
+            [
+                "ce8c202f8153f1bc"
+            ]
+        ]
+    },
+    {
+        "id": "91f51b35c2934fbc",
+        "type": "exec",
+        "z": "a42c5285d40faee6",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 1230,
+        "y": 120,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c1531bea8ee79196",
+        "type": "split",
+        "z": "a42c5285d40faee6",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1090,
+        "y": 120,
+        "wires": [
+            [
+                "91f51b35c2934fbc"
+            ]
+        ]
+    },
+    {
+        "id": "3cec2fcde23ba65e",
+        "type": "function",
+        "z": "a42c5285d40faee6",
+        "name": "Get Array",
+        "func": "msg.payload = flow.get(\"Array\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 120,
+        "wires": [
+            [
+                "c1531bea8ee79196"
+            ]
+        ]
+    },
+    {
+        "id": "2329ed6ee3114d3c",
+        "type": "Memory",
+        "z": "a42c5285d40faee6",
+        "name": "RAM usage",
+        "scale": "Byte",
+        "x": 630,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d3e2d6b8909680e4",
+        "type": "cpu",
+        "z": "a42c5285d40faee6",
+        "name": "",
+        "msgCore": false,
+        "msgOverall": true,
+        "msgArray": false,
+        "msgTemp": false,
+        "x": 630,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "144173d074efc07f",
+        "type": "Memory",
+        "z": "a42c5285d40faee6",
+        "name": "RAM usage",
+        "scale": "Byte",
+        "x": 630,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f30d258d1e4f844e",
+        "type": "ui_text_input",
+        "z": "a42c5285d40faee6",
+        "name": "Input Interval",
+        "label": "Input Interval",
+        "tooltip": "",
+        "group": "34ad6e5bbd42af36",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "711dc7a57e52e7e8"
+            ]
+        ]
+    },
+    {
+        "id": "711dc7a57e52e7e8",
+        "type": "function",
+        "z": "a42c5285d40faee6",
+        "name": "Change",
+        "func": "msg.payload = {\n    \"command\": \"update\",\n    \"name\": \"schedule_1\",\n    \"expression\": `0 */${msg.payload} * * * *`,\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 120,
+        "wires": [
+            [
+                "e3c4cf3321697bb3"
+            ]
+        ]
+    },
+    {
+        "id": "e3c4cf3321697bb3",
+        "type": "cronplus",
+        "z": "a42c5285d40faee6",
+        "name": "",
+        "outputField": "payload",
+        "timeZone": "",
+        "storeName": "",
+        "commandResponseMsgOutput": "output1",
+        "defaultLocation": "",
+        "defaultLocationType": "default",
+        "outputs": 1,
+        "options": [],
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "127f244c97a738dd"
+            ]
+        ]
+    },
+    {
+        "id": "b45ee7768902f16b",
+        "type": "ui_text_input",
+        "z": "a42c5285d40faee6",
+        "name": "Input Name",
+        "label": "Input KNIME Workflow Name",
+        "tooltip": "",
+        "group": "d09daa153d2eae01",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "500",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "83ff5f01f362ab1e"
+            ]
+        ]
+    },
+    {
+        "id": "996c987bb9163c4e",
+        "type": "comment",
+        "z": "a42c5285d40faee6",
+        "name": "Write Batch",
+        "info": "",
+        "x": 490,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "fc701b92c32d397d",
+        "type": "file",
+        "z": "a42c5285d40faee6",
+        "name": "Write File",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 480,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "83ff5f01f362ab1e",
+        "type": "function",
+        "z": "a42c5285d40faee6",
+        "name": "Update File",
+        "func": "msg.filename = 'D:/BatchFiles/' + msg.payload + '.bat';\nmsg.payload = `@echo off\nSET FILENAME=${msg.payload}\n\"C:\\\\Program Files\\\\KNIME\\\\knime.exe\" -consoleLog -noexit -nosplash -reset --launcher.suppressErrors -application org.knime.product.KNIME_BATCH_APPLICATION -workflowDir=\"C:\\\\Users\\\\E Bing Sen\\\\knime-workspace\\\\${msg.payload}\"\nPAUSE`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 420,
+        "wires": [
+            [
+                "fc701b92c32d397d",
+                "1de45d39a51f56aa"
+            ]
+        ]
+    },
+    {
+        "id": "0aba878d2e60a013",
+        "type": "ui_button",
+        "z": "a42c5285d40faee6",
+        "name": "Clear",
+        "group": "1b7297a7ae0acdb3",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "clear table",
+        "tooltip": "",
+        "color": "red",
+        "bgcolor": "white",
+        "className": "",
+        "icon": "fa-trash",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 330,
+        "y": 480,
+        "wires": [
+            [
+                "fb7d274c4357a515"
+            ]
+        ]
+    },
+    {
+        "id": "fb7d274c4357a515",
+        "type": "function",
+        "z": "a42c5285d40faee6",
+        "name": "Reset Table",
+        "func": "flow.set(\"filenames\", []);\n\nmsg.payload = {\n    \"command\": \"clearData\",\n    arguments: [],\n    returnPromise: true\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 480,
+        "wires": [
+            [
+                "734de0d1d0ed309e"
+            ]
+        ]
+    },
+    {
+        "id": "734de0d1d0ed309e",
+        "type": "ui_table",
+        "z": "a42c5285d40faee6",
+        "group": "1b7297a7ae0acdb3",
+        "name": "Batch Table",
+        "order": 1,
+        "width": 10,
+        "height": 6,
+        "columns": [
+            {
+                "field": "Filename",
+                "title": "Filenames",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 670,
+        "y": 460,
+        "wires": [
+            [
+                "8fb44bf341ea4ce0"
+            ]
+        ]
+    },
+    {
+        "id": "8fb44bf341ea4ce0",
+        "type": "function",
+        "z": "a42c5285d40faee6",
+        "name": "Set Payload",
+        "func": "const choose = msg.payload;\n\nlet fileRows = flow.get(\"toSchedule\") || [];\n\nfileRows.push(choose);\n\nconst tableData2 = fileRows.map(item => item.Selected ? item.Selected.Filename : item);\n\nflow.set(\"toSchedule\", fileRows);\n\nmsg.payload = tableData2;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 460,
+        "wires": [
+            [
+                "44adab41e1ce2703",
+                "31e8433b792f7e76"
+            ]
+        ]
+    },
+    {
+        "id": "31e8433b792f7e76",
+        "type": "function",
+        "z": "a42c5285d40faee6",
+        "name": "Format Payload",
+        "func": "let tableData = msg.payload;\n\nlet filenames = [];\n\nfor (let i = 0; i < tableData.length; i++) {\n    let row = tableData[i];\n    filenames.push(row.Filename);\n}\n\nmsg.payload = filenames.map(file => `D:/BatchFiles/${file}`);\n\nflow.set(\"Array\", msg.payload);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "44adab41e1ce2703",
+        "type": "ui_table",
+        "z": "a42c5285d40faee6",
+        "group": "057b58ebf0ee2bfc",
+        "name": "Scheduling Table",
+        "order": 1,
+        "width": "6",
+        "height": "6",
+        "columns": [
+            {
+                "field": "Filename",
+                "title": "To Schedule",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1050,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "c2ff5cc26362b5fa",
+        "type": "function",
+        "z": "a42c5285d40faee6",
+        "name": "Reset Table",
+        "func": "flow.set(\"toSchedule\", []);\n\nmsg.payload = {\n    \"command\": \"clearData\",\n    arguments: [],\n    returnPromise: true\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 500,
+        "wires": [
+            [
+                "44adab41e1ce2703",
+                "31e8433b792f7e76"
+            ]
+        ]
+    },
+    {
+        "id": "18fede98e82f4a1b",
+        "type": "ui_button",
+        "z": "a42c5285d40faee6",
+        "name": "Clear",
+        "group": "057b58ebf0ee2bfc",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "clear schedule",
+        "tooltip": "",
+        "color": "red",
+        "bgcolor": "white",
+        "className": "",
+        "icon": "fa-trash",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 690,
+        "y": 500,
+        "wires": [
+            [
+                "c2ff5cc26362b5fa"
+            ]
+        ]
+    },
+    {
+        "id": "1de45d39a51f56aa",
+        "type": "function",
+        "z": "a42c5285d40faee6",
+        "name": "Format File",
+        "func": "var content = msg.payload; \nvar filenameMatch = content.match(/^SET FILENAME=(.+)$/m);\nvar filenames = flow.get(\"filenames\") || []; \n\nif (filenameMatch && filenameMatch.length > 1) {\n    var filename = filenameMatch[1].trim();\n    filenames.push(filename);\n} else {\n    node.warn(\"Filename not found in the batch file content.\");\n}\n\nvar tableData = filenames.map(function (name) {\n    return { \"Filename\": name };\n});\n\nflow.set(\"filenames\", filenames);\n\nmsg.payload = tableData;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 440,
+        "wires": [
+            [
+                "734de0d1d0ed309e"
+            ]
+        ]
+    },
+    {
+        "id": "8e9faecc6f14ba31",
+        "type": "comment",
+        "z": "a42c5285d40faee6",
+        "name": "Batch Select",
+        "info": "",
+        "x": 1030,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "f0c5523ca47365a9",
+        "type": "exec",
+        "z": "a42c5285d40faee6",
+        "command": "D:\\\\AirflowWorkspace\\\\end_knime.bat",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "End KNIME",
+        "x": 630,
+        "y": 300,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "855c555ae510b961",
+        "type": "ui_button",
+        "z": "a42c5285d40faee6",
+        "name": "Terminate KNIME",
+        "group": "777bcb6a6f4b9aab",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Terminate KNIME",
+        "tooltip": "",
+        "color": "red",
+        "bgcolor": "white",
+        "className": "",
+        "icon": "stop",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 430,
+        "y": 300,
+        "wires": [
+            [
+                "f0c5523ca47365a9",
+                "127f244c97a738dd"
+            ]
+        ]
+    },
+    {
+        "id": "0f98f42e3670cbf5",
+        "type": "comment",
+        "z": "a42c5285d40faee6",
+        "name": "Change Input Interval",
+        "info": "",
+        "x": 160,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "92d6f02fbf846be1",
+        "type": "comment",
+        "z": "a42c5285d40faee6",
+        "name": "Input KNIME Workflow Name",
+        "info": "",
+        "x": 180,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "777bcb6a6f4b9aab",
+        "type": "ui_group",
+        "name": "Schedule",
+        "tab": "5710e1d32b8495c2",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "34ad6e5bbd42af36",
+        "type": "ui_group",
+        "name": "Scheduling (Minutes)",
+        "tab": "a23d8c3c670aa733",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d09daa153d2eae01",
+        "type": "ui_group",
+        "name": "Batch Writer for KNIME",
+        "tab": "a23d8c3c670aa733",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1b7297a7ae0acdb3",
+        "type": "ui_group",
+        "name": "List Table",
+        "tab": "5710e1d32b8495c2",
+        "order": 1,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "057b58ebf0ee2bfc",
+        "type": "ui_group",
+        "name": "Option",
+        "tab": "5710e1d32b8495c2",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5710e1d32b8495c2",
+        "type": "ui_tab",
+        "name": "Batch",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a23d8c3c670aa733",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
