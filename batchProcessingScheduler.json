@@ -28,7 +28,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 470,
-        "y": 180,
+        "y": 360,
         "wires": [
             [
                 "127f244c97a738dd",
@@ -43,7 +43,7 @@
         "name": "Scheduler",
         "info": "",
         "x": 460,
-        "y": 80,
+        "y": 260,
         "wires": []
     },
     {
@@ -67,7 +67,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 470,
-        "y": 220,
+        "y": 400,
         "wires": [
             [
                 "127f244c97a738dd",
@@ -92,7 +92,7 @@
         "repair": false,
         "outputs": 1,
         "x": 790,
-        "y": 120,
+        "y": 300,
         "wires": [
             [
                 "3cec2fcde23ba65e"
@@ -126,7 +126,7 @@
         "animate": true,
         "className": "",
         "x": 630,
-        "y": 120,
+        "y": 300,
         "wires": [
             [
                 "ce8c202f8153f1bc"
@@ -146,7 +146,7 @@
         "oldrc": false,
         "name": "",
         "x": 1230,
-        "y": 120,
+        "y": 300,
         "wires": [
             [],
             [],
@@ -165,7 +165,7 @@
         "stream": false,
         "addname": "",
         "x": 1090,
-        "y": 120,
+        "y": 300,
         "wires": [
             [
                 "91f51b35c2934fbc"
@@ -185,7 +185,7 @@
         "finalize": "",
         "libs": [],
         "x": 940,
-        "y": 120,
+        "y": 300,
         "wires": [
             [
                 "c1531bea8ee79196"
@@ -199,7 +199,7 @@
         "name": "RAM usage",
         "scale": "Byte",
         "x": 630,
-        "y": 180,
+        "y": 360,
         "wires": [
             []
         ]
@@ -214,7 +214,7 @@
         "msgArray": false,
         "msgTemp": false,
         "x": 630,
-        "y": 220,
+        "y": 400,
         "wires": [
             []
         ]
@@ -226,7 +226,7 @@
         "name": "RAM usage",
         "scale": "Byte",
         "x": 630,
-        "y": 260,
+        "y": 440,
         "wires": [
             []
         ]
@@ -250,7 +250,7 @@
         "className": "",
         "topicType": "msg",
         "x": 130,
-        "y": 120,
+        "y": 300,
         "wires": [
             [
                 "711dc7a57e52e7e8"
@@ -270,7 +270,7 @@
         "finalize": "",
         "libs": [],
         "x": 300,
-        "y": 120,
+        "y": 300,
         "wires": [
             [
                 "e3c4cf3321697bb3"
@@ -291,7 +291,7 @@
         "outputs": 1,
         "options": [],
         "x": 460,
-        "y": 120,
+        "y": 300,
         "wires": [
             [
                 "127f244c97a738dd"
@@ -317,7 +317,7 @@
         "className": "",
         "topicType": "msg",
         "x": 130,
-        "y": 420,
+        "y": 140,
         "wires": [
             [
                 "83ff5f01f362ab1e"
@@ -331,7 +331,7 @@
         "name": "Write Batch",
         "info": "",
         "x": 490,
-        "y": 360,
+        "y": 80,
         "wires": []
     },
     {
@@ -346,7 +346,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 480,
-        "y": 400,
+        "y": 120,
         "wires": [
             []
         ]
@@ -364,7 +364,7 @@
         "finalize": "",
         "libs": [],
         "x": 310,
-        "y": 420,
+        "y": 140,
         "wires": [
             [
                 "fc701b92c32d397d",
@@ -393,7 +393,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 330,
-        "y": 480,
+        "y": 200,
         "wires": [
             [
                 "fb7d274c4357a515"
@@ -413,7 +413,7 @@
         "finalize": "",
         "libs": [],
         "x": 490,
-        "y": 480,
+        "y": 200,
         "wires": [
             [
                 "734de0d1d0ed309e"
@@ -444,7 +444,7 @@
         "outputs": 1,
         "cts": true,
         "x": 670,
-        "y": 460,
+        "y": 180,
         "wires": [
             [
                 "8fb44bf341ea4ce0"
@@ -464,7 +464,7 @@
         "finalize": "",
         "libs": [],
         "x": 850,
-        "y": 460,
+        "y": 180,
         "wires": [
             [
                 "44adab41e1ce2703",
@@ -485,7 +485,7 @@
         "finalize": "",
         "libs": [],
         "x": 1040,
-        "y": 460,
+        "y": 180,
         "wires": [
             []
         ]
@@ -514,7 +514,7 @@
         "outputs": 0,
         "cts": false,
         "x": 1050,
-        "y": 500,
+        "y": 220,
         "wires": []
     },
     {
@@ -530,7 +530,7 @@
         "finalize": "",
         "libs": [],
         "x": 850,
-        "y": 500,
+        "y": 220,
         "wires": [
             [
                 "44adab41e1ce2703",
@@ -559,7 +559,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 690,
-        "y": 500,
+        "y": 220,
         "wires": [
             [
                 "c2ff5cc26362b5fa"
@@ -579,7 +579,7 @@
         "finalize": "",
         "libs": [],
         "x": 490,
-        "y": 440,
+        "y": 160,
         "wires": [
             [
                 "734de0d1d0ed309e"
@@ -593,7 +593,7 @@
         "name": "Batch Select",
         "info": "",
         "x": 1030,
-        "y": 420,
+        "y": 140,
         "wires": []
     },
     {
@@ -609,7 +609,7 @@
         "oldrc": false,
         "name": "End KNIME",
         "x": 630,
-        "y": 300,
+        "y": 480,
         "wires": [
             [],
             [],
@@ -637,7 +637,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 430,
-        "y": 300,
+        "y": 480,
         "wires": [
             [
                 "f0c5523ca47365a9",
@@ -652,7 +652,7 @@
         "name": "Change Input Interval",
         "info": "",
         "x": 160,
-        "y": 80,
+        "y": 260,
         "wires": []
     },
     {
@@ -662,7 +662,7 @@
         "name": "Input KNIME Workflow Name",
         "info": "",
         "x": 180,
-        "y": 360,
+        "y": 80,
         "wires": []
     },
     {
